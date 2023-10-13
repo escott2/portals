@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
     <>
       <h1>Portals</h1>
       <div className="card">
-      <p>Create a portal</p>
+      <Link to="create-portal">Create a portal</Link>
       <p>View portals</p>
       </div>
     </>
