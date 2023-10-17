@@ -6,7 +6,9 @@ function CreatePortal() {
   const [portals, setPortals] = useState<string[]>([]);
   const [portalName, setPortalName] = useState("");
   const [portalDescription, setPortalDescription] = useState("");
-  const [descriptionInfo, setDescriptionInfo] = useState("Describe this portal. You have 10 characters remaining");
+
+  const maxDescriptionLength = 200;
+  const remainingCharacters = maxDescriptionLength - portalDescription.length;
 
   const addPortal = () => {
     setPortals(initialPortals => [...initialPortals, portalName]);
@@ -15,14 +17,12 @@ function CreatePortal() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setPortalName("");
+    setPortalDescription("");
     addPortal();
   }
 
   const handleChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setPortalDescription(e.target.value);
-    console.log(portalDescription.length);
-    const remainingCharacters = 10 - portalDescription.length;
-    setDescriptionInfo(`You have ${remainingCharacters} remaining`);
   }
 
   return (
@@ -41,10 +41,10 @@ function CreatePortal() {
           id="portal-description"
           value={portalDescription}
           onChange={handleChangeDescription}
-          maxLength={10}
+          maxLength={maxDescriptionLength}
         >
         </textarea>
-        {descriptionInfo}
+        <p>You have {remainingCharacters} remaining</p>
         <button>Submit</button>
       </form>
       {portalName}
