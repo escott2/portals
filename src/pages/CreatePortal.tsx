@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
+import { portal } from "../model";
 
 function CreatePortal() {
 
-  const [portals, setPortals] = useState<string[]>([]);
+  const [portals, setPortals] = useState<portal[]>([]);
   const [portalName, setPortalName] = useState("");
   const [portalDescription, setPortalDescription] = useState("");
 
@@ -11,7 +12,13 @@ function CreatePortal() {
   const remainingCharacters = maxDescriptionLength - portalDescription.length;
 
   const addPortal = () => {
-    setPortals(initialPortals => [...initialPortals, portalName]);
+    setPortals(initialPortals => [
+      ...initialPortals,
+      {
+        "name": portalName,
+        "description": portalDescription
+      }
+    ]);
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -19,6 +26,7 @@ function CreatePortal() {
     setPortalName("");
     setPortalDescription("");
     addPortal();
+    console.log(portals);
   }
 
   const handleChangeDescription = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
