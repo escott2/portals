@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 function Home() {
-  const [portals, setPortals] = useState<string[]>([]);
 
   return (
     <>

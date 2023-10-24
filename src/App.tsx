@@ -7,10 +7,22 @@ import Home from './pages/Home.tsx';
 import CreatePortal from './pages/CreatePortal.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ViewPortals from "./pages/ViewPortals.tsx";
-// import { useState } from "react";
+import { useState } from "react";
+import { portal } from "./model";
+
 
 function App() {
-  // const [portals, setPortals] = useState<string[]>([]);
+  const [portals, setPortals] = useState<portal[]>([]);
+
+  const addPortal = (portal: portal) => {
+    setPortals(initialPortals => [
+      ...initialPortals,
+      {
+        "name": portal.name,
+        "description": portal.description
+      }
+    ]);
+  }
 
   const router = createBrowserRouter([
     {
@@ -20,11 +32,11 @@ function App() {
     },
     {
       path: "create-portal",
-      element: <CreatePortal />
+      element: <CreatePortal onAdd={addPortal} />
     },
     {
       path: "view-portals",
-      element: <ViewPortals />
+      element: <ViewPortals portals={portals} />
     }
   ])
 
