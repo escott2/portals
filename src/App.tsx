@@ -9,6 +9,13 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import ViewPortals from "./pages/ViewPortals.tsx";
 import { useState } from "react";
 import { portal } from "./model";
+import styled from "styled-components";
+
+const Main = styled.main`
+  background-color: #4F5F73;
+  width: 100vw;
+  height: 100vh;
+`;
 
 
 function App() {
@@ -41,7 +48,9 @@ function App() {
   ])
 
   return (
-    <RouterProvider router={router} />
+    <Main>
+       <RouterProvider router={router} />
+    </Main>
   )
 }
 
