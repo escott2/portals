@@ -7,11 +7,13 @@ interface Props {
   portals: portal[];
 }
 
+//TODO: Shared styling should go into component folder
 const Title = styled.h1`
-  font-size: 24px;
+  font-size: 34px;
   text-align: center;
   color: #0E1826;
   font-weight: 700;
+  margin-bottom: 20px;
 `;
 
 function ViewPortals({portals}: Props) {
