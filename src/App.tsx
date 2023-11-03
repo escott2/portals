@@ -8,17 +8,19 @@ import CreatePortal from './pages/CreatePortal.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import ViewPortals from "./pages/ViewPortals.tsx";
 import { useState } from "react";
-import { portal } from "./model";
+import { portal } from "./types/model.ts";
 import styled from "styled-components";
 
-const Main = styled.main`
-  background-color: #4F5F73;
+const AppWrapper = styled.div`
+  background-color: #F2F2F2;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+`;
+
+const StyledHeader = styled.header`
+  height: 60px;
+  background-color: red;
+  box-shadow: 
 `;
 
 
@@ -52,9 +54,12 @@ function App() {
   ])
 
   return (
-    <Main>
+    <AppWrapper>
+      <StyledHeader>
+        test
+      </StyledHeader>
        <RouterProvider router={router} />
-    </Main>
+    </AppWrapper>
   )
 }
 

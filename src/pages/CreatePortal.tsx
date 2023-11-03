@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
-import { portal } from "../model";
+import { portal } from "../types/model";
 import styled from "styled-components";
 
 interface Props {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { portal } from '../model';
+import { portal } from '../types/model';
 import portalSVG from '../assets/portalSVG.svg';
 import styled from "styled-components";
 
