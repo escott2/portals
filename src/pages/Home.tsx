@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Title from "../components/Title.tsx"
 import styled from "styled-components";
 
 const MainNavLink = styled(Link)`
@@ -18,15 +19,6 @@ const MainNavLink = styled(Link)`
     background-color: #253140;
     color: #FFFFFF;
   }
-`;
-
-//TODO: Shared styling should go into component folder
-const Title = styled.h1`
-  font-size: 34px;
-  text-align: center;
-  color: #0E1826;
-  font-weight: 700;
-  margin-bottom: 20px;
 `;
 
 function Home() {

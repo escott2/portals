@@ -1,20 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState} from "react";
 import { portal } from "../types/model";
-import styled from "styled-components";
+import Title from "../components/Title.tsx";
 
 interface Props {
   onAdd: (portal: portal) => void;
 }
-
-//TODO: Shared styling should go into component folder
-const Title = styled.h1`
-  font-size: 34px;
-  text-align: center;
-  color: #0E1826;
-  font-weight: 700;
-  margin-bottom: 20px;
-`;
 
 function CreatePortal({onAdd}: Props) {
 

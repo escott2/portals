@@ -18,9 +18,22 @@ const AppWrapper = styled.div`
 `;
 
 const StyledHeader = styled.header`
-  height: 60px;
-  background-color: red;
-  box-shadow: 
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: -1px 1px 10px 2px rgba(0,0,0,0.05);
+  margin-bottom: 25px
+`;
+
+//TODO: Create logo, don't use h1 for this
+const AppTitle = styled.h1`
+  font-size: 25px;
+  text-align: center;
+  color: #0E1826;
+  font-weight: 700;
+  margin-left: 10px;
 `;
 
 
@@ -56,7 +69,12 @@ function App() {
   return (
     <AppWrapper>
       <StyledHeader>
-        test
+        <div><AppTitle>Portals</AppTitle></div>
+        <div>
+          <button>Home</button>
+          <button>Create</button>
+          <button>View</button>
+        </div>
       </StyledHeader>
        <RouterProvider router={router} />
     </AppWrapper>
