@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState} from "react";
 import { portal } from "../types/model";
 import Title from "../components/Title.tsx";
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
   onAdd: (portal: portal) => void;
@@ -14,7 +15,8 @@ function CreatePortal({onAdd}: Props) {
   
   const portal: portal = {
     name: portalName,
-    description: portalDescription
+    description: portalDescription,
+    id: uuidv4()
   }
   const maxDescriptionLength = 200;
   const remainingCharacters = maxDescriptionLength - portalDescription.length;

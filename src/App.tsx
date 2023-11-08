@@ -44,8 +44,9 @@ function App() {
     setPortals(initialPortals => [
       ...initialPortals,
       {
-        "name": portal.name,
-        "description": portal.description
+        name: portal.name,
+        description: portal.description,
+        id: portal.id
       }
     ]);
   }

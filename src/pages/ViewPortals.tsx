@@ -13,7 +13,7 @@ function ViewPortals({portals}: Props) {
     <>
       <Title>View Portals</Title>
       {portals.map((portal) => (
-        <div>
+        <div key={portal.id}>
           <h2>{portal.name}</h2>
           <p>{portal.description}</p>
           <img src={portalSVG} alt="portal image"/>
